@@ -5,12 +5,15 @@ I'm actually use it to prepare for an interview and I think is a good point to s
 Data structures implemented:
 - heap (max)
 - priority queue (max)
+- stack
+- queue
+- linked-list
 
 Algorithms:
-	- Comparision type:
-		- insert sort
-		- bubble sort
-		- quick sort
+- Comparision type:
+	- insert sort
+	- bubble sort
+	- quick sort
 
-	- Linear time type:
-		- counting sort
+- Linear time type:
+	- counting sort
