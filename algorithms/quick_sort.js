@@ -1,10 +1,3 @@
-function log (log, msg) {
-  var msg = msg ||  '';
-  try {
-    console.log(msg, log);
-  } catch (e) {}
-}
-
 Array.prototype.exchange = function (origin, destination) {
   var oV = this[origin],
       dV = this[destination];
@@ -40,4 +33,3 @@ function quickSort(a, p, q) {
 
 var input = [2,8,7,1,3,5,6,4];
 quickSort(input, 0, input.length-1);
-log(input, 'output');
