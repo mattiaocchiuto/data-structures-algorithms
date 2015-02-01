@@ -40,7 +40,7 @@ Heap.prototype = {
       return this.heap[i];
     }
     else {
-      throw new 'This element does not exist';
+      throw 'This element does not exist';
     }
   },
 
@@ -122,10 +122,10 @@ PriorityQueue.prototype.heapExtractMax = function () {
 
 PriorityQueue.prototype.heapIncreaseKey = function (index, value) {
   if (arguments.length < 2){
-    throw new "Wrong arguments number";
+    throw "Wrong arguments number";
   }
   if(this.getNode(index) > value){
-    throw new "The new value has to be bigger than the previous";
+    throw "The new value has to be bigger than the previous";
   }
   this.updateNode(index, value);
   while (index>=0 && this.getParent(index)<value) {
