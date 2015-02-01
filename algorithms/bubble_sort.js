@@ -1,12 +1,3 @@
-function log (log, msg) {
-  var msg = msg ||  '';
-  try {
-    console.log(msg, log);
-  } catch (e) {
-
-  }
-}
-
 var arrToSort = [5,2,4,6,1,3];
 
 // bubble sort algorithm - complexity O(n*n)
@@ -25,7 +16,5 @@ var bubble_sort = (function (a){
       }
     }
     trips++;
-    log(a, 'while');
   }
-  log(a);
 })(arrToSort);
