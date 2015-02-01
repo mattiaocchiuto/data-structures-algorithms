@@ -1,0 +1,31 @@
+function log (log, msg) {
+  var msg = msg ||  '';
+  try {
+    console.log(msg, log);
+  } catch (e) {
+
+  }
+}
+
+var arrToSort = [5,2,4,6,1,3];
+
+// bubble sort algorithm - complexity O(n*n)
+var bubble_sort = (function (a){
+  var changeExec = true,
+      trips = 0;
+  while(changeExec>0) {
+    changeExec = false;
+    for (var i=0; i<a.length-trips;i++) {
+      if(a[i]>a[i+1]){
+        var ai = a[i],
+            aii = a[i+1];
+        a[i] = aii;
+        a[i+1] = ai;
+        changeExec = true;
+      }
+    }
+    trips++;
+    log(a, 'while');
+  }
+  log(a);
+})(arrToSort);
