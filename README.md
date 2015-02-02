@@ -11,6 +11,7 @@ Data structures:
 Algorithms:
 - Comparision type:
 	- insert sort
+	- merge sort
 	- bubble sort
 	- quick sort
 
