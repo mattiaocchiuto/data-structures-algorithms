@@ -1,4 +1,3 @@
-// TODO questa gestione delle fixtures non va bene, dopo la prima chiamata l'input è ordinato essendo passato per riferimento
 var fixtures = {
 	inputArray: [5,2,4,6,1,3],
 	incrSortedArray: [1,2,3,4,5,6],
