@@ -8,7 +8,7 @@ Data structures:
 - queue
 - linked-list
 
-Algorithms:
+Algorithms (unit-tested):
 - Comparision type:
 	- insert sort
 	- merge sort
