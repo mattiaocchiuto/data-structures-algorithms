@@ -1,7 +1,5 @@
-var arrToSort = [5,2,4,6,1,3];
-
 // bubble sort algorithm - complexity O(n*n)
-var bubble_sort = (function (a){
+var bubble_sort = function (a){
   var changeExec = true,
       trips = 0;
   while(changeExec>0) {
@@ -17,4 +15,5 @@ var bubble_sort = (function (a){
     }
     trips++;
   }
-})(arrToSort);
+  return a;
+}

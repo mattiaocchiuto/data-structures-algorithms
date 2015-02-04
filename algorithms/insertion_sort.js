@@ -1,5 +1,3 @@
-var arrToSort = [5,2,4,6,1,3];
-
 // Insertion Sort algorithm - O(n*n) 
 var insertion_sort_incr = function(a){
   var iteration = 0;
@@ -14,8 +12,8 @@ var insertion_sort_incr = function(a){
     }
     a[j+1]=k;
   }
-
-}
+  return a;
+};
 
 var insertion_sort_decr = function(a){
   var iteration = 0;
@@ -30,5 +28,5 @@ var insertion_sort_decr = function(a){
     }
     a[j-1]=k;
   }
-
+  return a;
 }

@@ -1,9 +1,3 @@
-function log (log, msg) {
-  var msg = msg ||  '';
-  try {
-    console.log(msg, log);
-  } catch (e) {}
-}
 function isUndefined (val) {
   return (typeof val === 'undefined')
 }
@@ -46,15 +40,12 @@ function merge(a, p, q, e){
 }
 
 // Merge sort algorithms - complexity O(n)
-function mergeSort(a, p, r){
+function merge_sort(a, p, r){
   if(p<r){
     var q = parseInt((p+r)/2);
-    mergeSort(a, p, q);
-    mergeSort(a, q+1, r);
+    merge_sort(a, p, q);
+    merge_sort(a, q+1, r);
     merge(a,p,q,r);
   }
+  return a;
 }
-
-var input = [2,8,7,1,3,5,6,4];
-mergeSort(input, 0, input.length-1);
-log(input);
