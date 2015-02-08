@@ -7,6 +7,7 @@ Data structures:
 - stack
 - queue
 - linked-list
+- binary tree
 
 Algorithms (unit-tested):
 - Comparision type:
