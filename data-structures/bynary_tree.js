@@ -114,8 +114,9 @@ BinaryTree.prototype = {
       y.l.p = y;
     }
   },
+  // TRAVERSAL ALGORITHMS
   /** 
-  * Navigate the tree and return a sorted array 
+  * Navigate the tree in in-order traversal way 
   * complexity O(n), where n is the number of nodes in the tree
   */
   inOrderWalk: function(x, result){
@@ -124,6 +125,32 @@ BinaryTree.prototype = {
       this.inOrderWalk(x.l, result);
       result.push(x.v);
       this.inOrderWalk(x.r, result);
+    }
+    return result;
+  },
+  /** 
+  * Navigate the tree in pre-order traversal way 
+  * complexity O(n), where n is the number of nodes in the tree
+  */
+  preOrderWalk: function(x, result){
+    var result = result||[];
+    if(!!x){
+      result.push(x.v);
+      this.preOrderWalk(x.l, result);
+      this.preOrderWalk(x.r, result);
+    }
+    return result;
+  },
+  /** 
+  * Navigate the tree in post-order traversal way 
+  * complexity O(n), where n is the number of nodes in the tree
+  */
+  postOrderWalk: function(x, result){
+    var result = result||[];
+    if(!!x){
+      this.postOrderWalk(x.l, result);
+      this.postOrderWalk(x.r, result);
+      result.push(x.v);
     }
     return result;
   },
