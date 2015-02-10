@@ -18,3 +18,6 @@ Algorithms (unit-tested):
 
 - Linear time type:
 	- counting sort
+
+- Search
+	- binary search
