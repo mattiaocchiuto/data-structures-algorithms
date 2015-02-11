@@ -3,6 +3,25 @@ var Node = function (v) {
   this.p = null;
   this.l = null;
   this.r = null;
+  this.color = 'white'; // Used for the breadth-first algorithm
+  this.distance = 0;    // Used for the breadth-first algorithm
+}
+Node.prototype = {
+  foreach: function(callback){
+    if(typeof callback !== 'function'){
+      throw new TypeError(callback+' is not a function');
+    }
+
+    var childs = [];
+    childs.push(this.l);
+    childs.push(this.r);
+
+    for(var i=0;i<childs.length;i++){
+      if (childs[i]){
+        callback.apply(this, [i, childs[i]]);
+      }
+    }
+  }
 }
 
 var BinaryTree = function () {
@@ -114,7 +133,7 @@ BinaryTree.prototype = {
       y.l.p = y;
     }
   },
-  // TRAVERSAL ALGORITHMS
+  // DEPTH-FIRST TRAVERSAL ALGORITHMS
   /** 
   * Navigate the tree in in-order traversal way 
   * complexity O(n), where n is the number of nodes in the tree
@@ -154,6 +173,24 @@ BinaryTree.prototype = {
     }
     return result;
   },
+  breadthFirts: function(x){
+    var queue = [];
+    queue.push(x);
+
+    while(queue.length>=1){
+      // non devo usare pop, inquanto mi gestirebbe una lista LIFO, questa è FIFO => devo togliere dalla testa
+      var u = queue.shift();
+      u.foreach(function(i, elem){
+        if(elem.color ==='white'){
+          elem.color = 'grey';
+          elem.distance = elem.distance+1;
+          queue.push(elem);
+        }
+      });
+      u.color = 'black';
+    }
+  },
+  // Private methods
   /**
   * Replace one subtree as a child of its parent 
   * with another subtree
